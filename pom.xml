@@ -33,12 +33,11 @@
           <artifactId>gson</artifactId>
           <version>2.2.4</version>
       </dependency>
-      <!-- TODO missing SymbolFactory class -->
-      <!--<dependency>-->
-          <!--<groupId>edu.princeton.cup</groupId>-->
-          <!--<artifactId>java-cup</artifactId>-->
-          <!--<version>10k</version>-->
-      <!--</dependency>-->
+      <dependency>
+          <groupId>net.sf.squirrel-sql.thirdparty-non-maven</groupId>
+          <artifactId>java-cup</artifactId>
+          <version>0.11a</version>
+      </dependency>
       <dependency>
           <groupId>jdom</groupId>
           <artifactId>jdom</artifactId>
@@ -148,13 +147,13 @@
       <dependency>
           <groupId>nz.ac.waikato.cms.weka</groupId>
           <artifactId>chiSquaredAttributeEval</artifactId>
-          <version>1.0.4</version>
-      </dependency>
-      <dependency>
-          <groupId>nz.ac.waikato.cms.weka</groupId>
-          <artifactId>bayesianLogisticRegression</artifactId>
           <version>1.0.2</version>
       </dependency>
+	<dependency>
+	  <groupId>nz.ac.waikato.cms.weka</groupId>
+	  <artifactId>bayesianLogisticRegression</artifactId>
+	  <version>1.0.2</version>
+	</dependency>
       <dependency>
           <groupId>edu.stanford.nlp</groupId>
           <artifactId>stanford-corenlp</artifactId>
@@ -175,6 +174,9 @@
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
+                        <configuration>
+                            <excludeTransitive>true</excludeTransitive>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
